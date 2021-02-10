@@ -1,6 +1,7 @@
 after cloning and  opening the project directory
 
 use the following steps and commands to run your app
+`composer install`
 
 `cp .env.example .env`
 
@@ -10,7 +11,7 @@ use the following steps and commands to run your app
 
 `php artisan migrate`
 
-`php artisan serve`
+`php artisan serve` 
 
 `php artisan websockets:serve`
 
