@@ -27,6 +27,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/edit/user/', 'UserController@edit')->name('useredit');
+Route::post('/edit/user/', 'UserController@update')->name('userupdate');
+// Route::get('/changepassword', 'UserController@changePasswordForm')->name('changepassword');
+// Route::post('/changepassword', 'UserController@changePassword')->name('changepassword');
+
+Route::get('/edit/password/user/', 'UserController@passwordEdit')->name('passwordedit');
+Route::post('/edit/password/user/', 'UserController@passwordUpdate')->name('passwordupdate');
+
 Route::post('/message/store/{user}', 'MessageController@store');
 Route::post('/user/markMessagesSeen/{user}','UserController@markMessagesSeen'); 
 Route::get('/user/unseenMessagesCount/{user}','UserController@unseenMessagesCount'); 

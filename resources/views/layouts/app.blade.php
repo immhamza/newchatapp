@@ -57,17 +57,28 @@
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                               <img src="{{asset(Auth::user()->avatar)}}" style="height:35px;width:35px; border-radius:50%; margin-right:15px;" > {{ Auth::user()->name }} <span class="caret"></span>
+                               
+                               <img src="{{asset('/images/'.Auth::user()->avatar)}}" style="height:35px;width:35px; border-radius:50%; margin-right:15px;" > {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                            <a class="dropdown-item" href="{{ route('home') }}">
+                                    {{ __('Chat') }}
+                                </a>
+                                
+                                <a class="dropdown-item" href="{{ route('useredit') }}">
+                                    {{ __('Profile Edit') }}
+                                </a>
+
+                                <a class="dropdown-item" href="{{ route('passwordedit') }}">
+                                    {{ __('Update password') }}
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-
-
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                       style="display: none;">
                                     @csrf
