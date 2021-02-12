@@ -11,8 +11,11 @@ use the following steps and commands to run your app
 
 `php artisan migrate`
 
-`php artisan serve` 
+`php artisan serve` in one terminal
 
-`php artisan websockets:serve`
+`php artisan websockets:serve` in other terminal
+
+**If there is error in websocket just go to URL http://127.0.0.1:8000/admin/websocket and hit on connect button and it will connect to port 6001**
+
 
 
